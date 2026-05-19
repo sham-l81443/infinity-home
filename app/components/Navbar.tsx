@@ -26,7 +26,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="absolute z-50 flex justify-between items-center transition-all top-4 left-2 right-2 px-5 py-3 rounded-full bg-white/20 backdrop-blur-xs border border-white/20 shadow-xs lg:top-0 lg:left-0 lg:right-auto lg:w-full lg:px-28 lg:py-8 lg:rounded-none lg:bg-transparent lg:backdrop-blur-none lg:border-transparent lg:shadow-none">
+      <nav className="absolute z-50 flex justify-between items-center transition-all top-4 left-2 right-2 px-2  py-3 rounded-full lg:top-0 lg:left-0 lg:right-auto lg:w-full lg:px-28 lg:py-8 lg:rounded-none lg:bg-transparent lg:backdrop-blur-none lg:border-transparent lg:shadow-none ">
         {/* Logo */}
         <Link href="/" className="flex items-center text-xl lg:text-[1.75rem] font-bold tracking-tighter">
           <span className="text-red-600">infinity</span>
@@ -54,11 +54,11 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="lg:hidden p-2 -mr-2  text-black hover:bg-black/5 rounded-full transition-colors"
+          className="lg:hidden p-2 -mr-0.5  text-black hover:bg-black/5 rounded-full transition-colors bg-white/20 backdrop-blur-xs border border-white/20 shadow-xs "
           onClick={() => setIsOpen(prev => !prev)}
           aria-label="Toggle menu"
         >
-          {isOpen ? <X className="size-6 text-black" /> : <Menu className="size-6" />}
+          {isOpen ? <X className="size-4 text-black" /> : <Menu className="size-4" />}
         </button>
       </nav>
 
