@@ -11,13 +11,14 @@ function Hero() {
   const [isConnectOpen, setIsConnectOpen] = useState(false);
 
   return (
-    <section className="relative overflow-hidden h-dvh flex items-center  ">
+    <section className="relative overflow-hidden h-svh flex items-center transform-gpu">
       {/* Full-bleed background image */}
       <Image
         src={heroImg}
         priority
         alt="Modern white architectural villa overlooking the ocean"
-        className="absolute  inset-0 w-full h-full object-cover object-bottom-left lg:object-right lg:scale-105 lg:translate-x-[2%]"
+        className="absolute inset-0 w-full h-full object-cover object-bottom-left lg:object-[85%_center] will-change-transform translate-z-0"
+
         width={1536}
         height={1024}
       />
