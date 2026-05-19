@@ -120,9 +120,9 @@ export default function OurWorks() {
       </div>
 
       {/* ── Desktop: sidebar + carousel ── */}
-      <div className="hidden lg:flex gap-8 items-stretch">
+      <div className="hidden lg:flex gap-8 items-stretch ">
         {/* Sidebar */}
-        <div className="flex flex-col justify-between shrink-0 w-44 xl:w-52">
+        <div className="flex flex-col justify-between shrink-0 w-44 xl:w-52 py-4">
           <div>
             <div className="flex items-center gap-3 mb-6 animate-fade-in-up-1">
               <span className="block w-8 h-0.5 bg-primary/40 rounded-full" />
