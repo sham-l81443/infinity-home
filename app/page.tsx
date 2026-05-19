@@ -30,7 +30,7 @@ function Hero() {
       <div className="relative z-10 w-full px-5 lg:px-28 pt-32 lg:pt-32 pb-16 lg:pb-24">
         <div className="w-full lg:max-w-xl">
           <div className="flex items-center gap-4 mb-6 lg:mb-8 animate-fade-in-up-1">
-            <span className="block w-12 h-0.5 bg-primary/40 rounded-full"></span>
+            <span className="block w-8 lg:w-12 h-0.5 bg-primary/40 rounded-full"></span>
             <p className="text-primary text-[10px] md:text-xs lg:text-sm font-semibold tracking-[0.22em] mb-0 lg:mb-0 uppercase">
               WE DESIGN SPACES
             </p>
