@@ -164,7 +164,7 @@ export default function OurWorks() {
             {projects.map((project) => (
               <div
                 key={project.id}
-                className="flex-none w-1/5 pl-4 xl:pl-6"
+                className="flex-none w-1/4 pl-4 xl:pl-6"
               >
                 <div className="w-full bg-zinc-50/40 hover:bg-zinc-50/70 border border-zinc-150 rounded-lg flex flex-col gap-4 transition-[transform,background-color,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-lg group shadow-xs cursor-pointer">
                   <div className="relative aspect-4/3 overflow-hidden bg-zinc-100 rounded-t-lg">
@@ -201,7 +201,7 @@ export default function OurWorks() {
             {projects.map((project) => (
               <div
                 key={project.id}
-                className="flex-none w-[42vw] pl-4"
+                className="flex-none w-[50vw] pl-4"
               >
                 <div className="w-full overflow-hidden bg-zinc-50/40 border border-zinc-150 rounded-lg flex flex-col gap-2 group shadow-xs cursor-pointer">
                   <div className="relative aspect-4/3 overflow-hidden bg-zinc-100">
