@@ -95,7 +95,7 @@ export default function OurWorks() {
   return (
     <section
       id="projects"
-      className="w-full mx-auto px-5 lg:px-28 py-12 lg:py-20"
+      className="w-full mx-auto px-5 lg:px-28 pt-20 pb-0"
     >
       {/* ── Mobile header ── */}
       <div className="flex flex-col justify-between mb-8 lg:hidden">
@@ -159,14 +159,15 @@ export default function OurWorks() {
         </div>
 
         {/* Desktop carousel */}
-        <div className="flex-1 min-w-0 overflow-hidden" ref={desktopRef}>
+        <div className="flex-1 min-w-0 overflow-hidden relative before:content-[''] before:absolute before:h-full before:w-5 before:bg-linear-to-r before:from-white/90 before:via-white/20 before:to-transparent before:z-10 after:content-[''] after:absolute after:right-0 after:top-0 after:h-full after:w-5 after:bg-linear-to-l after:from-white/90 after:via-white/20 after:to-transparent after:z-10" ref={desktopRef}>
+
           <div className="flex -ml-4 xl:-ml-6 h-full py-2">
             {projects.map((project) => (
               <div
                 key={project.id}
                 className="flex-none w-1/4 pl-4 xl:pl-6"
               >
-                <div className="w-full bg-zinc-50/40 hover:bg-zinc-50/70 border border-zinc-150 rounded-lg flex flex-col gap-4 transition-[transform,background-color,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-lg group shadow-xs cursor-pointer">
+                <div className="w-full bg-zinc-50/40 hover:bg-zinc-50/70 border border-zinc-150 rounded-lg lg:rounded-2xl flex flex-col gap-4 transition-[transform,background-color,box-shadow] duration-300 group cursor-pointer">
                   <div className="relative aspect-4/3 overflow-hidden bg-zinc-100 rounded-t-lg">
                     <Image
                       src={project.image}

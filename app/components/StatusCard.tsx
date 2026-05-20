@@ -148,8 +148,8 @@ export default function StatusCard() {
           }
         />
         <StatItem
-          value="120+"
-          startValue="050+"
+          value="100%"
+          startValue="080%"
           delay={600}
           label="Happy Clients"
           icon={

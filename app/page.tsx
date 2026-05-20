@@ -6,69 +6,73 @@ import Image from "next/image";
 import Link from "next/link";
 import OurWorks from "./components/OurWorks";
 import StatusCard from "./components/StatusCard";
+import AboutUs from "./components/AboutUs";
+import OurServices from "./components/OurServices";
 
 function Hero() {
   const [isConnectOpen, setIsConnectOpen] = useState(false);
 
   return (
-    <section className="relative overflow-hidden h-svh flex items-center transform-gpu">
-      {/* Full-bleed background image */}
-      <Image
-        src={heroImg}
-        priority
-        alt="Modern white architectural villa overlooking the ocean"
-        className="absolute inset-0 w-full h-full object-cover object-bottom-left lg:object-[85%_center] will-change-transform translate-z-0"
+    <>
+      <section className="relative overflow-hidden h-svh flex items-center transform-gpu">
+        {/* Full-bleed background image */}
+        <Image
+          src={heroImg}
+          priority
+          alt="Modern white architectural villa overlooking the ocean"
+          className="absolute inset-0 w-full h-full object-cover object-bottom-left lg:object-[85%_center] will-change-transform translate-z-0"
 
-        width={1536}
-        height={1024}
-      />
+          width={1536}
+          height={1024}
+        />
 
-      {/* Left-side gradient for text readability */}
-      <div className="absolute inset-0 bg-linear-to-r from-white/90 via-white/40 to-transparent " />
+        {/* Left-side gradient for text readability */}
+        <div className="absolute inset-0 bg-linear-to-r from-white/90 via-white/40 to-transparent " />
 
-      {/* Content */}
-      <div className="relative z-10 w-full px-5 lg:px-28 pt-32 lg:pt-32 pb-16 lg:pb-24">
-        <div className="w-full lg:max-w-xl">
-          <div className="flex items-center gap-4 mb-6 lg:mb-8 animate-fade-in-up-1">
-            <span className="block w-8 lg:w-12 h-0.5 bg-primary/40 rounded-full"></span>
-            <p className="text-primary text-[10px] md:text-xs lg:text-sm font-semibold tracking-[0.22em] mb-0 lg:mb-0 uppercase">
-              WE DESIGN SPACES
-            </p>
-          </div>
+        {/* Content */}
+        <div className="relative z-10 w-full px-5 lg:px-28 pt-32 lg:pt-32 pb-16 lg:pb-24">
+          <div className="w-full lg:max-w-xl">
+            <div className="flex items-center gap-4 mb-6 lg:mb-8 animate-fade-in-up-1">
+              <span className="block w-8 lg:w-12 h-0.5 bg-primary/40 rounded-full"></span>
+              <p className="text-primary text-[10px] md:text-xs lg:text-sm font-semibold tracking-[0.22em] mb-0 lg:mb-0 uppercase">
+                WE DESIGN SPACES
+              </p>
+            </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-7xl xl:text-[5.5rem] leading-[1.02] lg:leading-[1.05] text-black/80 lg:text-black/90 font-semibold lg:font-semibold lg:tracking-tight mb-0 lg:mb-8 animate-fade-in-up-2">
-            Architecture<br />
-            <span className="text-black/50 font-light italic font-serif">that inspires.</span>
-          </h1>
+            <h1 className="text-4xl md:text-5xl lg:text-7xl xl:text-[5.5rem] leading-[1.02] lg:leading-[1.05] text-black/80 lg:text-black/90 font-semibold lg:font-semibold lg:tracking-tight mb-0 lg:mb-8 animate-fade-in-up-2">
+              Architecture<br />
+              <span className="text-black/50 font-light italic font-serif">that inspires.</span>
+            </h1>
 
-          <div className="relative mt-7 max-w-xs">
-            <p className=" lg:mt-0 text-sm leading-relaxed text-zinc-700 lg:text-zinc-600 lg:text-xl max-w-full sm:max-w-xl lg:max-w-lg mb-0 lg:mb-12 animate-fade-in-up-3">
-              We are a modern architecture studio creating timeless spaces that inspire and elevate everyday living.
-            </p>
-          </div>
+            <div className="relative mt-7 max-w-xs">
+              <p className=" lg:mt-0 text-sm leading-relaxed text-zinc-700 lg:text-zinc-600 lg:text-xl max-w-full sm:max-w-xl lg:max-w-lg mb-0 lg:mb-12 animate-fade-in-up-3">
+                We are a modern architecture studio creating timeless spaces that inspire and elevate everyday living.
+              </p>
+            </div>
 
-          <div className="mt-9 lg:mt-0 z-[-10 ] flex lg:flex-nowrap items-center gap-4 sm:gap-6 group/buttons animate-fade-in-up-4">
-            <button
-              onClick={() => setIsConnectOpen(true)}
-              className="group/btn flex-1 cursor-pointer btn-gradient text-white px-3 h-9 lg:h-auto sm:px-5 sm:py-3 lg:px-8 lg:py-4 rounded-lg lg:rounded-xl inline-flex lg:flex items-center justify-center gap-2 lg:gap-3 text-xs  lg:text-base font-medium shadow-(--shadow-medium) hover:shadow-(--shadow-large) transition-all lg:hover:-translate-y-1"
-            >
-              Connect Us
-              <ArrowRight className="size-4 lg:group-hover/btn:translate-x-1 lg:transition-transform" />
-            </button>
+            <div className="mt-9 lg:mt-0 z-[-10 ] flex lg:flex-nowrap items-center gap-4 sm:gap-6 group/buttons animate-fade-in-up-4">
+              <button
+                onClick={() => setIsConnectOpen(true)}
+                className="group/btn flex-1 cursor-pointer btn-gradient text-white px-3 h-9 lg:h-auto sm:px-5 sm:py-3 lg:px-8 lg:py-4 rounded-lg lg:rounded-xl inline-flex lg:flex items-center justify-center gap-2 lg:gap-3 text-xs  lg:text-base font-medium shadow-(--shadow-medium) hover:shadow-(--shadow-large) transition-all lg:hover:-translate-y-1"
+              >
+                Connect Us
+                <ArrowRight className="size-4 lg:group-hover/btn:translate-x-1 lg:transition-transform" />
+              </button>
 
-            <Link href="#projects" className="cursor-pointer group inline-flex lg:flex items-center justify-center gap-2 lg:gap-3 px-4 h-9 lg:h-auto sm:px-5 sm:py-3 lg:px-8 lg:py-3 rounded-lg lg:rounded-xl bg-white/70 lg:bg-transparent hover:bg-white/50 backdrop-blur-md lg:backdrop-blur-none border border-white/50 lg:border-transparent text-zinc-800 text-xs sm:text-sm lg:text-base font-medium lg:shadow-none shadow-(--shadow-medium) hover:shadow-(--shadow-large) transition-all duration-300 ">
-              <span className="size-5  sm:size-6 lg:size-8 rounded-full lg:border lg:border-zinc-500  flex items-center justify-center shadow-sm transition-all duration-300 shrink-0">
-                <Send className="size-2.5 sm:size-3 lg:size-3.5 fill-zinc-500 " />
-              </span>
-              <span className="">Explore Projects</span>
-            </Link>
-            {/* <GoogleRatingCard /> */}
+              <Link href="#projects" className="cursor-pointer group inline-flex lg:flex items-center justify-center gap-2 lg:gap-3 px-4 h-9 lg:h-auto sm:px-5 sm:py-3 lg:px-8 lg:py-3 rounded-lg lg:rounded-xl bg-white/70 lg:bg-transparent hover:bg-white/50 backdrop-blur-md lg:backdrop-blur-none border border-white/50 lg:border-transparent text-zinc-800 text-xs sm:text-sm lg:text-base font-medium lg:shadow-none shadow-(--shadow-medium) hover:shadow-(--shadow-large) transition-all duration-300 ">
+                <span className="size-5  sm:size-6 lg:size-8 rounded-full lg:border lg:border-zinc-500  flex items-center justify-center shadow-sm transition-all duration-300 shrink-0">
+                  <Send className="size-2.5 sm:size-3 lg:size-3.5 " />
+                </span>
+                <span className="">Explore Projects</span>
+              </Link>
+              {/* <GoogleRatingCard /> */}
 
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Connect Bottom Drawer Card Overlay */}
+      {/* Connect Bottom Drawer Card Overlay — rendered outside <section> so overflow-hidden + transform-gpu don't trap the fixed positioning */}
       <div
         className={`fixed inset-0 z-50 flex items-end justify-center bg-black/45 backdrop-blur-xs transition-opacity duration-300 ${isConnectOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           }`}
@@ -140,16 +144,18 @@ function Hero() {
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 }
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-white">
+    <main className="relative min-h-screen bg-white scroll-smooth">
       <Hero />
       <StatusCard />
+      <AboutUs />
       <OurWorks />
+      <OurServices />
     </main>
   );
 }
