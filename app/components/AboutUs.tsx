@@ -44,13 +44,11 @@ export default function AboutUs() {
     return (
       <span
         key={`${word}-${idx}`}
-        className={`inline-block transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-          isVisible
-            ? "opacity-100 translate-y-0 blur-0"
-            : "opacity-0 translate-y-4 blur-[2px]"
-        } ${serif ? "font-serif italic" : ""} ${
-          highlight ? "text-zinc-900" : ""
-        }`}
+        className={`inline-block transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible
+          ? "opacity-100 translate-y-0 blur-0"
+          : "opacity-0 translate-y-4 blur-[2px]"
+          } ${serif ? "font-serif italic" : ""} ${highlight ? "text-zinc-900" : ""
+          }`}
         style={{ transitionDelay: `${currentIndex * 60}ms` }}
       >
         {word}
@@ -80,9 +78,8 @@ export default function AboutUs() {
       <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-12">
         {/* Decorative top element */}
         <div
-          className={`flex items-center justify-center gap-4 mb-14 lg:mb-20 transition-all duration-1000 ease-out ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
+          className={`flex items-center justify-center gap-4 mb-14 lg:mb-20 transition-all duration-1000 ease-out ${isVisible ? "opacity-100" : "opacity-0"
+            }`}
         >
           <span className="block w-12 lg:w-20 h-px bg-zinc-300" />
           <div className="size-1.5 rounded-full bg-zinc-400" />
@@ -113,9 +110,8 @@ export default function AboutUs() {
 
           {/* Spacer dash */}
           <span
-            className={`block mx-auto my-6 lg:my-10 w-8 h-px bg-zinc-400 transition-all duration-1000 delay-700 ease-out ${
-              isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
-            }`}
+            className={`block mx-auto my-6 lg:my-10 w-8 h-px bg-zinc-400 transition-all duration-1000 delay-700 ease-out ${isVisible ? "opacity-100 scale-x-100" : "opacity-0 scale-x-0"
+              }`}
           />
 
           {/* Line 3 */}
@@ -141,17 +137,23 @@ export default function AboutUs() {
 
         {/* CTA button */}
         <div
-          className={`flex justify-center mt-14 lg:mt-20 transition-all duration-700 delay-1000 ease-out ${
-            isVisible
-              ? "opacity-100 translate-y-0"
-              : "opacity-0 translate-y-4"
-          }`}
+          className={`flex justify-center mt-14 lg:mt-20 transition-all duration-700 delay-1000 ease-out ${isVisible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-4"
+            }`}
         >
-          <button className="group relative cursor-pointer rounded-2xl p-[1.5px] overflow-hidden inline-flex">
+          <button className="shadow border border-zinc-300 group relative cursor-pointer rounded-2xl p-0.5 inline-flex overflow-hidden">
             {/* Spinning conic gradient — the "snake" border */}
-            <span className="absolute inset-[-200%] animate-border-spin bg-[conic-gradient(from_0deg,transparent_0%,transparent_40%,var(--color-primary)_50%,transparent_60%,transparent_100%)]" />
+            <span
+              className="absolute animate-border-spin"
+              style={{
+                inset: "-300%",
+                background:
+                  "conic-gradient(from 0deg, transparent 0%, transparent 35%, #2D5DA8 50%, transparent 65%, transparent 100%)",
+              }}
+            />
             {/* Inner white surface */}
-            <span className="relative z-10 bg-white rounded-[calc(1rem-1.5px)] px-6 py-3 inline-flex items-center gap-3 text-sm font-medium text-zinc-700 group-hover:text-zinc-900 transition-colors duration-300">
+            <span className="relative z-10 bg-white rounded-xl px-6 py-4 inline-flex items-center gap-3 text-sm font-medium text-zinc-700 group-hover:text-zinc-900 transition-colors duration-300 shadow-sm">
               <span>Know More About Our Expertise</span>
               <ArrowRight className="size-4 group-hover:translate-x-0.5 transition-transform duration-300" />
             </span>
@@ -160,9 +162,8 @@ export default function AboutUs() {
 
         {/* Decorative bottom element */}
         <div
-          className={`flex items-center justify-center gap-4 mt-14 lg:mt-20 transition-all duration-1000 delay-500 ease-out ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
+          className={`flex items-center justify-center gap-4 mt-14 lg:mt-20 transition-all duration-1000 delay-500 ease-out ${isVisible ? "opacity-100" : "opacity-0"
+            }`}
         >
           <span className="block w-12 lg:w-20 h-px bg-zinc-300" />
           <div className="size-1.5 rounded-full bg-zinc-400" />
