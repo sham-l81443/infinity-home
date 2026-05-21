@@ -450,11 +450,10 @@ function DotButtons({
           key={i}
           onClick={() => onDotButtonClick(i)}
           aria-label={`Go to project ${i + 1}`}
-          className={`h-1.5 rounded-full transition-all duration-300 ease-out ${
-            i === selectedIndex
+          className={`h-1.5 rounded-full transition-all duration-300 ease-out ${i === selectedIndex
               ? "w-5 bg-primary"
               : "w-1.5 bg-zinc-300 hover:bg-zinc-400"
-          }`}
+            }`}
         />
       ))}
     </div>
@@ -471,11 +470,10 @@ function ProjectCard({
 }) {
   return (
     <div
-      className={`w-full bg-zinc-50/40 hover:bg-zinc-50/70 border border-zinc-150 flex flex-col transition-[transform,background-color,box-shadow] duration-300 group cursor-pointer ${
-        isMobile
+      className={`w-full bg-zinc-50/40 hover:bg-zinc-50/70 border border-zinc-150 flex flex-col transition-[transform,background-color,box-shadow] duration-300 group cursor-pointer ${isMobile
           ? "gap-2 overflow-hidden rounded-lg shadow-xs"
           : "gap-4 rounded-lg lg:rounded-2xl"
-      }`}
+        }`}
     >
       <div className="relative aspect-4/3 overflow-hidden bg-zinc-100 rounded-t-lg">
         <Image
@@ -492,9 +490,8 @@ function ProjectCard({
       <div className="flex items-start justify-between px-2 pb-2">
         <div className="flex flex-col">
           <h3
-            className={`font-medium text-zinc-950 tracking-tight font-sans ${
-              isMobile ? "text-[10px]" : "text-sm xl:text-base"
-            }`}
+            className={`font-medium text-zinc-950 tracking-tight font-sans ${isMobile ? "text-[10px]" : "text-sm xl:text-base"
+              }`}
           >
             {project.title}
           </h3>
@@ -503,9 +500,8 @@ function ProjectCard({
           </span>
         </div>
         <ArrowRight
-          className={`size-4 text-black/80 self-end mr-2 ${
-            !isMobile && "group-hover:translate-x-1 transition-transform"
-          }`}
+          className={`size-4 text-black/80 self-end mr-2 ${!isMobile && "group-hover:translate-x-1 transition-transform"
+            }`}
         />
       </div>
     </div>
