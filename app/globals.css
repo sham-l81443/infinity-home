@@ -137,6 +137,17 @@
     }
   }
 
+  @keyframes homeBreath {
+    0%, 100% {
+      opacity: 0.10;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      opacity: 0.18;
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+  }
+
   --font-heading: var(--font-sans)
 }
 

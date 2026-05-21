@@ -8,6 +8,8 @@ import OurWorks from "./components/OurWorks";
 import StatusCard from "./components/StatusCard";
 import AboutUs from "./components/AboutUs";
 import OurServices from "./components/OurServices";
+import ContactUs from "./components/ContactUs";
+import Footer from "./components/Footer";
 
 function Hero() {
   const [isConnectOpen, setIsConnectOpen] = useState(false);
@@ -156,6 +158,8 @@ export default function Home() {
       <AboutUs />
       <OurWorks />
       <OurServices />
+      <ContactUs />
+      <Footer />
     </main>
   );
 }
