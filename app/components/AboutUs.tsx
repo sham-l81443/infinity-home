@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import {  ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import AboutExpanded from "./AboutExpanded";
 
 const GoogleHomeLogo = () => (
@@ -190,12 +190,12 @@ export default function AboutUs() {
           {/* ── Expandable success container ── */}
           <div
             className="w-full grid transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
-            // style={{
-            //   gridTemplateRows: isExpanded ? '1fr' : '0fr',
-            //   opacity: isExpanded ? 1 : 0,
-            // }}
+          // style={{
+          //   gridTemplateRows: isExpanded ? '1fr' : '0fr',
+          //   opacity: isExpanded ? 1 : 0,
+          // }}
           >
-            <div className="overflow-hidden">
+            <div className="overflow-hidden ">
               <AboutExpanded onCollapse={() => setIsExpanded(false)} />
             </div>
           </div>
