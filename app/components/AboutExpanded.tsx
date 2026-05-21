@@ -7,7 +7,7 @@ interface AboutExpandedProps {
 
 export default function AboutExpanded({ onCollapse }: AboutExpandedProps) {
   return (
-    <div className="pt-12 lg:pt-16 max-w-5xl mx-auto">
+    <div className="pt-12 lg:pt-16 max-w-5xl mx-auto ">
       <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
         {/* ── Section 1: Quote ── */}
         <div className="flex-1 order-2 lg:order-1">
@@ -28,13 +28,13 @@ export default function AboutExpanded({ onCollapse }: AboutExpandedProps) {
         </div>
 
         {/* ── Section 2: Person image ── */}
-        <div className="relative w-64 h-72 sm:w-72 sm:h-80 lg:w-80 lg:h-104 xl:w-96 xl:h-120 shrink-0 order-1 lg:order-2 xl:translate-x-20">
+        <div className="relative w-64 h-72 sm:w-72 sm:h-80 lg:w-80 lg:h-104 xl:w-96 xl:h-120 shrink-0 order-1 lg:order-2 ">
           <Image
             src="/founder-no-bg.png"
             alt="Founder portrait"
             fill
-            className="object-contain object-right"
-            sizes="(max-width: 640px) 256px, (max-width: 1024px) 288px, 352px"
+            className="object-contain object-right "
+            sizes="(max-width: 640px) 256px, (max-width: 1024px) 288px, 352px "
           />
         </div>
       </div>
