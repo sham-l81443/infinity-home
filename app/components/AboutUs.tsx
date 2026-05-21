@@ -75,7 +75,7 @@ export default function AboutUs() {
           }`}
         style={{ transitionDelay: `${currentIndex * 60}ms` }}
       >
-        {word === "home" && <span className="absolute right-0 translate-x-1/2 top-0 -translate-y-1/5 lg:-translate-y-1/3 -z-1 w-full"><GoogleHomeLogo /></span>}
+        {/* {word === "home" && <span className="absolute right-0 translate-x-1/2 top-0 -translate-y-1/5 lg:-translate-y-1/3 -z-1 w-full"><GoogleHomeLogo /></span>} */}
         {word}
       </span>
     );
