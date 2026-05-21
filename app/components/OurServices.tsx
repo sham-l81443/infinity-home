@@ -101,12 +101,12 @@ export default function OurServices() {
         <div className="flex flex-col">
           {services.map((service, i) => {
             const bgClasses = [
+              "bg-primary/0",
               "bg-primary/5",
               "bg-primary/10",
               "bg-primary/15",
               "bg-primary/20",
               "bg-primary/25",
-              "bg-primary/30",
             ];
             
             return (
