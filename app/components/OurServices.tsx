@@ -99,15 +99,25 @@ export default function OurServices() {
 
         {/* ── Service rows ── */}
         <div className="flex flex-col">
-          {services.map((service, i) => (
-            <div
-              key={service.number}
-              className={`group relative transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-6"
-                }`}
-              style={{ transitionDelay: `${200 + i * 100}ms` }}
-            >
+          {services.map((service, i) => {
+            const bgClasses = [
+              "bg-primary/5",
+              "bg-primary/10",
+              "bg-primary/15",
+              "bg-primary/20",
+              "bg-primary/25",
+              "bg-primary/30",
+            ];
+            
+            return (
+              <div
+                key={service.number}
+                className={`group relative ${bgClasses[i]} transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-6"
+                  }`}
+                style={{ transitionDelay: `${200 + i * 100}ms` }}
+              >
               {/* Top border line */}
               <div className="absolute inset-x-0 top-0 h-px bg-zinc-200 group-first:bg-zinc-300" />
 
@@ -150,7 +160,8 @@ export default function OurServices() {
                 <div className="absolute inset-x-0 bottom-0 h-px bg-zinc-200" />
               )}
             </div>
-          ))}
+          );
+        })}
         </div>
       </div>
     </section>
