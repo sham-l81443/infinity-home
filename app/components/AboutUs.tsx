@@ -1,32 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight } from "lucide-react";
-
-/* Google Home–style SVG watermark */
-const GoogleHomeLogo = () => (
-  <svg
-    viewBox="0 0 100 100"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="w-full h-full"
-  >
-    {/* Roof / triangle */}
-    <path
-      d="M50 12 L14 48 L26 48 L26 82 L44 82 L44 62 L56 62 L56 82 L74 82 L74 48 L86 48 Z"
-      fill="url(#homeGrad)"
-    />
-    {/* Chimney */}
-    <rect x="62" y="22" width="8" height="20" rx="1.5" fill="url(#homeGrad)" />
-    <defs>
-      <linearGradient id="homeGrad" x1="50" y1="10" x2="50" y2="90" gradientUnits="userSpaceOnUse">
-        <stop offset="0%" stopColor="#F472B6" />
-        <stop offset="60%" stopColor="#FBCFE8" />
-        <stop offset="100%" stopColor="#FFFFFF" />
-      </linearGradient>
-    </defs>
-  </svg>
-);
+import { ArrowRight, Home } from "lucide-react";
 
 export default function AboutUs() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -69,27 +44,15 @@ export default function AboutUs() {
     return (
       <span
         key={`${word}-${idx}`}
-        className={`inline-block transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] relative ${isVisible
+        className={`inline-block transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${isVisible
           ? "opacity-100 translate-y-0 blur-0"
           : "opacity-0 translate-y-4 blur-[2px]"
           } ${serif ? "font-serif italic" : ""} ${highlight ? "text-zinc-900" : ""
           }`}
         style={{ transitionDelay: `${currentIndex * 60}ms` }}
       >
-        {word === "home" && (
-          <span
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none -z-0"
-            style={{
-              width: "clamp(80px, 10vw, 140px)",
-              height: "clamp(80px, 10vw, 140px)",
-              opacity: 0.13,
-              animation: "homeBreath 4s ease-in-out infinite",
-            }}
-          >
-            <GoogleHomeLogo />
-          </span>
-        )}
-        <span className="relative z-10">{word}</span>
+        {word === "home" && <span className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"><Home /></span>}
+        {word}
       </span>
     );
   };
