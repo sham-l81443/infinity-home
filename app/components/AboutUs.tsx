@@ -3,6 +3,30 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Home } from "lucide-react";
 
+const GoogleHomeLogo = () => (
+  <svg
+    viewBox="0 0 100 100"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="w-full h-full"
+  >
+    {/* Roof / triangle */}
+    <path
+      d="M50 12 L14 48 L26 48 L26 82 L44 82 L44 62 L56 62 L56 82 L74 82 L74 48 L86 48 Z"
+      fill="url(#homeGrad)"
+    />
+    {/* Chimney */}
+    <rect x="62" y="22" width="8" height="20" rx="1.5" fill="url(#homeGrad)" />
+    <defs>
+      <linearGradient id="homeGrad" x1="50" y1="10" x2="50" y2="90" gradientUnits="userSpaceOnUse">
+        <stop offset="0%" stopColor="#FBCFE8" />
+        <stop offset="60%" stopColor="#FDF2F8" />
+        <stop offset="100%" stopColor="#FFFFFF" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
 export default function AboutUs() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -51,7 +75,7 @@ export default function AboutUs() {
           }`}
         style={{ transitionDelay: `${currentIndex * 60}ms` }}
       >
-        {word === "home" && <span className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2"><Home /></span>}
+        {word === "home" && <span className="absolute right-0 translate-x-1/2 top-0 -translate-y-1/5 lg:-translate-y-1/3 -z-1 w-full"><GoogleHomeLogo /></span>}
         {word}
       </span>
     );
