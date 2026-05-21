@@ -519,7 +519,7 @@ export default function OurWorks() {
   if (isMobile === null) return null;
 
   return (
-    <section id="projects" className="w-full mx-auto px-5 lg:px-28 pt-20 pb-0">
+    <section id="projects" className="w-full mx-auto px-5 lg:px-28 pb-0">
 
       {/* Mobile section header */}
       {isMobile && (

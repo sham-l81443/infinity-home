@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Home } from "lucide-react";
+import {  ChevronDown } from "lucide-react";
+import AboutExpanded from "./AboutExpanded";
 
 const GoogleHomeLogo = () => (
   <svg
@@ -30,6 +31,7 @@ const GoogleHomeLogo = () => (
 export default function AboutUs() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -85,7 +87,7 @@ export default function AboutUs() {
     <section
       ref={sectionRef}
       id="about"
-      className="relative overflow-hidden py-24 "
+      className="relative overflow-hidden lg:py-24   py-24"
     >
       {/* Subtle architectural grid background */}
       <div
@@ -162,13 +164,15 @@ export default function AboutUs() {
 
         {/* CTA button */}
         <div
-          className={`flex justify-center mt-14 lg:mt-20 transition-all duration-700 delay-1000 ease-out ${isVisible
+          className={`flex flex-col items-center mt-14 lg:mt-20 transition-all duration-700 delay-1000 ease-out ${isVisible
             ? "opacity-100 translate-y-0"
             : "opacity-0 translate-y-4"
             }`}
         >
-          <button className="shadow border border-zinc-300 group relative cursor-pointer rounded-2xl p-0.5 inline-flex overflow-hidden">
-            {/* Spinning conic gradient — the "snake" border */}
+          {/* <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className="shadow border border-zinc-300 group relative cursor-pointer rounded-2xl p-0.5 inline-flex overflow-hidden"
+          >
             <span
               className="absolute animate-border-spin"
               style={{
@@ -177,12 +181,24 @@ export default function AboutUs() {
                   "conic-gradient(from 0deg, transparent 0%, transparent 35%, #2D5DA8 50%, transparent 65%, transparent 100%)",
               }}
             />
-            {/* Inner white surface */}
             <span className="relative z-10 bg-white rounded-xl px-6 py-4 inline-flex items-center gap-3 text-sm font-medium text-zinc-700 group-hover:text-zinc-900 transition-colors duration-300 shadow-sm">
               <span>Know More About Our Expertise</span>
-              <ArrowRight className="size-4 group-hover:translate-x-0.5 transition-transform duration-300" />
+              <ChevronDown className="size-4 group-hover:translate-y-0.5 transition-transform duration-300" />  
             </span>
-          </button>
+          </button> */}
+
+          {/* ── Expandable success container ── */}
+          <div
+            className="w-full grid transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+            // style={{
+            //   gridTemplateRows: isExpanded ? '1fr' : '0fr',
+            //   opacity: isExpanded ? 1 : 0,
+            // }}
+          >
+            <div className="overflow-hidden">
+              <AboutExpanded onCollapse={() => setIsExpanded(false)} />
+            </div>
+          </div>
         </div>
 
         {/* Decorative bottom element */}

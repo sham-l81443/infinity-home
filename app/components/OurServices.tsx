@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronDown, ChevronUp } from "lucide-react";
 
 const services = [
   {
@@ -55,6 +55,8 @@ const bgClasses = [
 export default function OurServices() {
   const sectionRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -164,6 +166,91 @@ export default function OurServices() {
               </div>
             );
           })}
+        </div>
+
+        {/* ── Know more toggle ── */}
+        <div className="mt-10 lg:mt-16 flex flex-col items-center">
+          <button
+            onClick={() => setIsExpanded(!isExpanded)}
+            className={`group flex items-center gap-2 text-sm lg:text-base font-medium transition-all duration-300 ${isExpanded ? 'text-primary' : 'text-zinc-600 hover:text-primary'}`}
+          >
+            <span>{isExpanded ? 'Show less' : 'Know more about our expertise'}</span>
+            {isExpanded ? (
+              <ChevronUp className="size-4 lg:size-5 transition-transform duration-300" />
+            ) : (
+              <ChevronDown className="size-4 lg:size-5 group-hover:translate-y-0.5 transition-transform duration-300" />
+            )}
+          </button>
+
+          {/* ── Expandable expertise container ── */}
+          <div
+            ref={contentRef}
+            className="w-full grid transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+            style={{
+              gridTemplateRows: isExpanded ? '1fr' : '0fr',
+              opacity: isExpanded ? 1 : 0,
+            }}
+          >
+            <div className="overflow-hidden">
+            <div className="pt-10 lg:pt-16">
+              {/* Expertise grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                {[
+                  {
+                    title: 'Residential Design',
+                    desc: 'From compact homes to luxury villas — we craft spaces that reflect your lifestyle with optimal use of every square foot.',
+                  },
+                  {
+                    title: 'Commercial Spaces',
+                    desc: 'Offices, retail outlets, and mixed-use complexes designed for productivity, brand identity, and seamless customer flow.',
+                  },
+                  {
+                    title: 'Renovation & Remodeling',
+                    desc: 'Breathing new life into existing structures with modern design sensibilities while preserving structural integrity.',
+                  },
+                  {
+                    title: 'Landscape Architecture',
+                    desc: 'Outdoor spaces that extend your living area — gardens, courtyards, and terraces that blend with the built environment.',
+                  },
+                  {
+                    title: 'Sustainable Design',
+                    desc: 'Energy-efficient solutions, rainwater harvesting, solar integration, and eco-friendly materials for responsible building.',
+                  },
+                  {
+                    title: 'Interior Styling',
+                    desc: 'Complete interior design from material selection to furniture layout — creating cohesive, livable spaces.',
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="group/card relative p-6 lg:p-8 rounded-2xl border border-zinc-100 hover:border-primary/20 bg-white hover:bg-primary/[0.02] transition-all duration-300"
+                  >
+                    <h4 className="text-base lg:text-lg font-semibold text-zinc-900 mb-2 tracking-tight">
+                      {item.title}
+                    </h4>
+                    <p className="text-xs lg:text-sm text-zinc-500 leading-relaxed">
+                      {item.desc}
+                    </p>
+                    <div className="absolute top-6 right-6 lg:top-8 lg:right-8 size-6 rounded-full border border-zinc-100 group-hover/card:border-primary/30 flex items-center justify-center transition-all duration-300">
+                      <ArrowUpRight className="size-3 text-zinc-300 group-hover/card:text-primary transition-colors duration-300" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Bottom show less */}
+              {/* <div className="flex justify-center mt-8 lg:mt-12">
+                <button
+                  onClick={() => setIsExpanded(false)}
+                  className="flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors duration-300"
+                >
+                  <span>Show less</span>
+                  <ChevronUp className="size-4" />
+                </button>
+              </div> */}
+            </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
